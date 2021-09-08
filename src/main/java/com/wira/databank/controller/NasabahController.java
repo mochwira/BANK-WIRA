@@ -2,7 +2,7 @@ package com.wira.databank.controller;
 
 import com.wira.databank.entity.Nasabah;
 import com.wira.databank.repository.NasabahRepository;
-import javax.validation.Valid;
+//import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -28,10 +28,10 @@ public class NasabahController {
 
     @PostMapping("/savenasabah")
     //@Valid BindingResult bindingResult
-    public String saveRole(@Valid Nasabah nasabah, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()){
-            return "redirect:/nasabah";
-        }
+    public String saveNasabah(Nasabah nasabah) {
+//        if(bindingResult.hasErrors()){
+//            return "redirect:/nasabah";
+//        }
 
         nasabahRepository.save(nasabah);
 
