@@ -6,7 +6,6 @@
 package com.wira.databank.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,8 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -63,9 +60,9 @@ public class Nasabah implements Serializable {
     private String tempatLahir;
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 50)
     @Column(name = "tanggal_lahir")
-    @Temporal(TemporalType.DATE)
-    private Date tanggalLahir;
+    private String tanggalLahir;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
@@ -84,7 +81,7 @@ public class Nasabah implements Serializable {
         this.nasabahId = nasabahId;
     }
 
-    public Nasabah(Integer nasabahId, String namaLengkap, String alamat, String tempatLahir, Date tanggalLahir, String noHp, String noKtp) {
+    public Nasabah(Integer nasabahId, String namaLengkap, String alamat, String tempatLahir, String tanggalLahir, String noHp, String noKtp) {
         this.nasabahId = nasabahId;
         this.namaLengkap = namaLengkap;
         this.alamat = alamat;
@@ -126,11 +123,11 @@ public class Nasabah implements Serializable {
         this.tempatLahir = tempatLahir;
     }
 
-    public Date getTanggalLahir() {
+    public String getTanggalLahir() {
         return tanggalLahir;
     }
 
-    public void setTanggalLahir(Date tanggalLahir) {
+    public void setTanggalLahir(String tanggalLahir) {
         this.tanggalLahir = tanggalLahir;
     }
 
