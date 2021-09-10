@@ -73,12 +73,12 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #37ca37;
+  background: #2ed573;
 }
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #47748b;
+  border-bottom: 1px solid #ffffff;
 }
 
 #sidebar ul p {
@@ -94,7 +94,7 @@ a:focus {
 
 #sidebar ul li a:hover {
   color: #5fdfbf;
-  background: #fff;
+  background: #ffffff;
 }
 
 #sidebar ul li.active > a,
